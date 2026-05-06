@@ -1,0 +1,28 @@
+{
+  "repo": "forge-trade-auction-hub",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for auction systems, covering simulation kernel, seeded input scenarios, and failure-oriented tests.",
+  "weights": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 4
+  },
+  "thresholds": {
+    "ship": 182,
+    "watch": 126
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}
