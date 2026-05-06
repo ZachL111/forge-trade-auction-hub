@@ -1,0 +1,73 @@
+{
+  "repo": "forge-trade-auction-hub",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for auction systems, covering simulation kernel, seeded input scenarios, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "spread pressure",
+      "fill risk",
+      "portfolio drift",
+      "quote width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "spread pressure",
+      "signal": 75,
+      "slack": 40,
+      "drag": 9,
+      "confidence": 73,
+      "score": 236,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "fill risk",
+      "signal": 62,
+      "slack": 54,
+      "drag": 14,
+      "confidence": 77,
+      "score": 213,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "portfolio drift",
+      "signal": 53,
+      "slack": 44,
+      "drag": 16,
+      "confidence": 53,
+      "score": 155,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "quote width",
+      "signal": 55,
+      "slack": 52,
+      "drag": 30,
+      "confidence": 72,
+      "score": 144,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "spread pressure",
+      "signal": 63,
+      "slack": 50,
+      "drag": 15,
+      "confidence": 89,
+      "score": 220,
+      "lane": "ship"
+    }
+  ]
+}
